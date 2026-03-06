@@ -16,13 +16,25 @@ Load both as CSVs into /data
 '''
 
 #Write your code below
-
+import requests
+import io
+import pandas as pd
 
 
 # Extract visual crossing weather data for Chicago, IL
-def extract_weather_data(
+def extract_weather_data():
+    weather = requests.get('https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Chicago,IL/2024-10-01/2025-10-31?key=SC8HPQU85E2XPGK86BGW7U2TQ&contentType=csv&include=days')
+    weatherStr = io.StringIO(weather.text, newline='')
+    weatherTab = pd.read_csv(weatherStr)
+    weatherTab.to_csv(r'src/data/weather.csv')
+    return weatherTab
 
 
 
 # Extract CTA transit ridership data
-def extract_transit_data(
+def extract_transit_data():
+    transit = requests.get('https://data.cityofchicago.org/api/views/6iiy-9s97/rows.csv?accessType=DOWNLOAD')
+    transitStr = io.StringIO(transit.text, newline='')
+    transitTab = pd.read_csv(transitStr)
+    transitTab.to_csv(r'src/data/transit.csv')
+    return transitTab
