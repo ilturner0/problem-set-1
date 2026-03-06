@@ -1,5 +1,19 @@
 PROBLEM SET #1: ETL Weather and Transit Data
 
+This code package performs the extract, transform, and load process for weather data and transit data. 
+
+1. The weather data is collected via visualcrossing's weather API, and the transit data is collected as a csv directly from the Chicago Transit Authority.
+
+2. Both datasets are read as CSVs into separate pandas dataframes. Each dataframe then has the date field standardized using pd.to_datetime. This is to ensure that both date columns are in the same format.
+
+3. The two datasets are then merged in an inner join using the date column as the field to join on. The merged dataset is then stored in /data.
+
+4. A variety of visualizations are generated using the merged dataset and are printed to the screen.
+
+5. Finally, a message containing insights derived from the visualizations is printed to the screen.
+
+
+
 Instructions: 
 - Clone the Problem Set 1 code package from GitHub into VS Code
 - You should align the code package with your GitHub account 
