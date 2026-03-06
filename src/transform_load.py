@@ -116,5 +116,6 @@ def printMessage():
     Prints message to screen.
     
     """
+    
     print("An interesting trend that I noticed when creating the line plot is the sort of inverse relationship taking place between ridership and temperature at the peaks and valleys of the lines. When temperature is at its local minimum, then ridership is at its peak. Normally this is what you'd expect, but what makes this more interesting is that ridership did not increase generally during the winter months when the temperature was lowest. The number of rides during this period are lower than the number of rides during the fall months.")
     print("\n The relationship between ridership and precipitation is also very interesting. From the plot we can see that there is a slight positive correlation between the two variables, but the data point with the highest precipitation is more in the center of the distribution. I am also unsure of the units that are being used for precipitation. I didn't see it shown in the API documentation. Knowing the units would make the plot more intelligible.")
